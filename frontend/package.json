@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.11.30",
+    "@types/uuid": "^9.0.8"
   }
 }
