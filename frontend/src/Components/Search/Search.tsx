@@ -2,12 +2,12 @@ import React, {ChangeEvent, SyntheticEvent, useState} from "react";
 
 interface Props 
 {
-  onClick:(e:SyntheticEvent) => void;
+  onSearchSubmit:(e:SyntheticEvent) => void;
   search:string | undefined;
-  handleChange:(e:ChangeEvent<HTMLInputElement>) => void;
+  handleSearchChange:(e:ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Search:React.FC<Props> = ({onClick,search,handleChange}:Props):JSX.Element => {
+const Search:React.FC<Props> = ({onSearchSubmit,search,handleSearchChange}:Props):JSX.Element => {
     // const [search, setSearch] = useState<string>("");
 
     // const handleChange = (e:ChangeEvent<HTMLInputElement>)=>{
@@ -22,10 +22,15 @@ const Search:React.FC<Props> = ({onClick,search,handleChange}:Props):JSX.Element
     // }
 
   return (
-    <div>
-        <input value={search} onChange={(e)=>handleChange(e)} />
-        <button onClick={((e) => onClick(e))} >Click</button>
-    </div>
+    // <div>
+    //     <input value={search} onChange={(e)=>handleChange(e)} />
+    //     <button onClick={((e) => onClick(e))} >Click</button>
+    // </div>
+    <>
+      <form onSubmit={onSearchSubmit}>
+        <input value={search} onChange={handleSearchChange} />
+      </form>
+    </>
   )
 }
 
