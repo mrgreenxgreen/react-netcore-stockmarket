@@ -1,1 +1,1 @@
-amo na
+fintech
