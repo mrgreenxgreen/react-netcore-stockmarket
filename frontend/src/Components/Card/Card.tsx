@@ -20,15 +20,18 @@ const Card: React.FC<Props> = ({id, searchResult,onPortfolioCreate}:Props): JSX.
             alt="company logo"
             height="200"
             width="200"
-            />
-            <div className="details">
-              <h2>{searchResult.name} ({searchResult.symbol})</h2>
-              <p>{searchResult.currency}</p>
-            </div>
-            <p className='info'>
-              {searchResult.exchangeShortName} - {searchResult.stockExchange}
-            </p>
-            <AddPortfolio onPortfolioCreate={onPortfolioCreate} symbol={searchResult.symbol}/>
+        />
+        <div className="details">
+          <h2>{searchResult.name} ({searchResult.symbol})</h2>
+          <p>{searchResult.currency}</p>
+        </div>
+        <p className='info'>
+          {searchResult.exchangeShortName} - {searchResult.stockExchange}
+        </p>
+        <AddPortfolio 
+            onPortfolioCreate={onPortfolioCreate}
+            symbol={searchResult.symbol}
+        />
     </div>
   )
 }
